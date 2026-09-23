@@ -1,0 +1,279 @@
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            font-weight: bold;
+            margin: 0%;
+        }
+        
+         :root {
+            --button-color: #0f8487;
+            --font-color: rgb(24, 111, 165);
+        }
+        
+        .page {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 40px 1fr 22vh;
+            grid-template-areas: "logo ancuor-nav button-nav" "main main main" "divFooter divFooter divFooter";
+            gap: 5px;
+        }
+        
+        .page .button-nav {
+            margin-top: 0px;
+            text-align: right;
+        }
+        
+        .page .ancuor-nav {
+            margin-top: 11px;
+            text-align: right;
+        }
+        
+        .logo {
+            padding: 5px;
+            width: 31%;
+            height: 7vh;
+            grid-area: logo;
+        }
+        
+        .ancuor {
+            padding: 3px;
+            margin-top: 10px;
+            color: var(--font-color);
+            text-decoration: none;
+            grid-area: ancuor-nav;
+        }
+        
+        .butt {
+            background-color: var(--button-color);
+            padding: 5px;
+            color: white;
+            border: 5px solid transparent;
+            border-radius: 10px;
+            width: 30%;
+            grid-area: button-nav;
+        }
+        
+        button:hover {
+            cursor: pointer;
+        }
+        
+        .butt-1 {
+            background-color: transparent;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            color: var(--font-color);
+            border: 5px solid transparent;
+            border-radius: 10px;
+        }
+        
+        #langToggleBtn {
+            color: var(--button-color);
+            padding: 5px;
+            border-radius: 10px;
+        }
+        
+        main {
+            width: 100%;
+            height: 70vh;
+            background-image: url("backGroundpng.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: 100%;
+            background-position-y: 3%;
+            grid-area: main;
+            text-align: left;
+        }
+        
+        main h1 {
+            color: var(--font-color);
+            width: 200px;
+            text-align: right;
+            margin-right: 78%;
+        }
+        
+        main div {
+            margin-top: 13%;
+            margin-left: 12%;
+        }
+        
+        .pp {
+            display: block;
+            color: rgb(88, 119, 149);
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 25px;
+        }
+        
+        .addAcount {
+            padding: 10px;
+            width: 10%;
+            background-color: transparent;
+            border: 2px solid rgb(49, 147, 154);
+            border-radius: 10px;
+            margin-left: 15px;
+        }
+        
+        .search {
+            background-color: var(--button-color);
+            width: 120px;
+            padding: 8px;
+            color: white;
+            border-radius: 7px;
+        }
+        
+        .divFooter {
+            background-color: transparent;
+            border: 2px solid rgb(234, 240, 245);
+            width: 300px;
+            height: 17vh;
+            border-radius: 10px;
+            margin: auto;
+            padding-top: 30px;
+            padding-right: 15px;
+            position: relative;
+        }
+        
+        .divFooter span {
+            display: block;
+            max-width: 140px;
+            font-size: x-small;
+            line-height: 17px;
+            color: rgb(155, 172, 192);
+        }
+        
+        .divFooter p {
+            color: var(--button-color);
+        }
+        
+        .divFooter::before {
+            background-color: #b7e6e7;
+            border-radius: 50%;
+            padding-right: 6px;
+            padding-left: 5px;
+            content: " > ";
+            position: absolute;
+            left: 16px;
+            bottom: 10px;
+            color: var(--button-color);
+        }
+        /* 1. إخفاء النافذة افتراضياً وتغطية الشاشة بخلفية معتمة */
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* لون أسود شفاف */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        /* 2. تنسيق الصندوق الأبيض   */
+        
+        .modal-box {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 368px;
+            max-width: 84%;
+            text-align: center;
+            position: relative;
+            top: 55px;
+            right: 511px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 26px;
+            cursor: pointer;
+            color: #94a3b8;
+            transition: color 0.2s ease;
+        }
+        
+        .close-btn:hover {
+            color: #1e293b;
+        }
+        
+        .modal-header-icon {
+            width: 200px;
+        }
+        /*  النصوص داخل النافذة */
+        
+        .modal-box h2 {
+            color: var(--font-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .modal-box p {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        /* 6. حاوية البطاقات لتكون جنباً إلى جنب باستخدام Flexbox */
+        
+        .account-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        /* 7. تنسيق البطاقة الواحدة (طبيب / مريض) */
+        
+        .account-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 25px 20px;
+            width: 50%;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        /* تأثير التمرير على البطاقة */
+        
+        .account-card:hover {
+            border-color: #0d9488;
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.1);
+            transform: translateY(-3px);
+        }
+        /* أيقونات داخل البطاقات */
+        
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .account-card h3 {
+            color: #1e293b;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .account-card p {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        /* زر السهم الداخلي للبطاقة */
+        
+        .arrow-btn {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #0d9488;
+            color: #ffffff;
+            border-radius: 50%;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: bold;
+        }
