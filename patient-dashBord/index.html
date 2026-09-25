@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inaya</title>
+    <title>Inaya|لوحة تحكم المريض </title>
     <link rel="stylesheet" href="design.css">
 </head>
 
 <body>
     <div class="page">
         <header>
-            <button>الاشعارات🔔 </button>
+            <button class="notification">🔔 <span>3</span></button>
             <div class="searching">
                 <!-- كود الايقونة -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                 </svg><input type="search" placeholder="ابحث عن طبيب أو موعد أو خدمة"></div>
-
-
+                 </svg>
+                 <input type="search" placeholder="ابحث عن موعد، طبيب أو خدمة...">
+               
+            </div>
         </header>
         <div class="name-patients">
             <img src="pesonal-img.png" alt="صورة شخصية" class="pesonal-img">
@@ -30,50 +31,73 @@
 
         </div>
         <div class="disription">
-            <div>
-                <h1>مرحباً بك في عناية </h1>
+            <div class="welcome-text">
+                <h1>مرحباً بك في عناية</h1>
                 <h6>نحن هنا لدعمك في رحلتك الصحية، وتوفير أفضل رعاية طبية لك.</h6>
             </div>
-            <div>
-                <img src="" alt="صورة تعبيرية">
-                <h4>معاً نحو حياة اكثر صحة </h4>
+            <div class="welcome-art">
+                <div class="stethoscope">♡</div>
+                <h4>معاً نحو<br>حياة أكثر صحة</h4>
             </div>
         </div>
         <main>
-            <div>
-                <button>تفاصيل الموعد > </button>
+            <div class="appointment-action">
+                <button>تفاصيل الموعد <b>‹</b></button>
             </div>
-            <span> </span>
-            <div>
-                🧑‍⚕️
-                <h3>موعدك القادم</h3>
-                <h4>د.............</h4>
-                <h6>استشاري أمراض الباطنة</h6>
+            <div class="appointment-doctor">
+                <div class="doctor-avatar doctor-one">👨🏻‍⚕️</div>
+                <div>
+                    <h3>موعدك القادم</h3>
+                    <h4>د. أحمد الكيلاني</h4>
+                    <h6>استشاري أمراض الباطنة</h6>
+                </div>
             </div>
-
+            <div class="appointment-date">
+                <p>السبت، 24 مايو 2025 </p>
+                <p>10:30 صباحاً </p>
+                <p>مجمع عناية الطبي - الرياض </p>
+            </div>
+            <div class="confirmed">✓ مؤكد</div>
         </main>
-        <aside><img src="logo-aside.png" alt="logo">
-            <button>الرئيسية</button>
-            <button>ملفي الشخصي</button>
-            <button>مواعيدي</button>
-            <button>الرسائل</button>
-            <button>الاعدادات</button>
+        <aside>
+            <img src="logo-aside.png" alt="logo" class="logo-aside">
+            <button class="active">⌂ <span>الرئيسية</span></button>
+            <button>▣ <span>مواعيدي</span></button>
+            <button>▱ <span>الرسائل</span></button>
+            <button>♙ <span>الملف الشخصي</span></button>
+            <button>⚙ <span>الإعدادات</span></button>
         </aside>
         <div class="appointments">
-            <h3> مواعيدي القادمة</h3>
-            <p>عرض الكل></p>
+            <div class="card-title"><h3>مواعيدي القادمة </h3><p>عرض الكل ‹</p></div>
+            <div class="appointment-row">
+                <div class="date-box"><b>السبت</b><strong>24</strong><small>مايو</small></div>
+                <div><h4>د. أحمد الكيلاني</h4><p>أمراض الباطنة</p><small>◷ 10:30 صباحاً</small><em>✓ مؤكد</em></div>
+            </div>
+            <div class="appointment-row">
+                <div class="date-box"><b>الأربعاء</b><strong>28</strong><small>مايو</small></div>
+                <div><h4>د. منى السعيد</h4><p>طب الأطفال</p><small>◷ 2:00 مساءً</small><em class="pending">قادم</em></div>
+            </div>
+            <div class="appointment-row">
+                <div class="date-box"><b>السبت</b><strong>31</strong><small>مايو</small></div>
+                <div><h4>د. سامي النعيمي</h4><p>طب الأسنان</p><small>◷ 11:15 صباحاً</small><em class="pending">قادم</em></div>
+            </div>
         </div>
         <div class="doctors">
-            <h3>أطباء مقترحون</h3>
-            <p>عرض الكل></p>
+            <div class="card-title"><h3>أطباء مقترحون </h3><p>عرض الكل ‹</p></div>
+            <div class="doctor-row"><div class="small-avatar">👩🏻‍⚕️</div><div><h4>د. ليلى العتيبي</h4><p>استشارية أمراض النساء والتوليد</p><b>4.8 ⭐</b></div><button>احجز موعد</button></div>
+            <div class="doctor-row"><div class="small-avatar">👨🏻‍⚕️</div><div><h4>د. خالد القحطاني</h4><p>استشاري طب الأسرة</p><b>4.7 ⭐</b></div><button>احجز موعد</button></div>
+            <div class="doctor-row"><div class="small-avatar">👩🏻‍⚕️</div><div><h4>د. نورة الحربي</h4><p>استشارية الجلدية والتجميل</p><b>4.6 ⭐</b></div><button>احجز موعد</button></div>
         </div>
         <div class="messages">
-            <h3>رسائل الطبيب</h3>
-            <p>عرض الكل></p>
+            <div class="card-title"><h3>رسائل الطبيب </h3><p>عرض الكل ‹</p></div>
+            <div class="message-row"><div class="small-avatar">👨🏻‍⚕️</div><div><h4>د. أحمد الكيلاني</h4><p>يسعدني الاطلاع على نتائج التحاليل الخاصة بك...</p></div></div>
+            <div class="message-row"><div class="small-avatar">👩🏻‍⚕️</div><div><h4>د. منى السعيد</h4><p>يرجى إحضار التقرير الطبي للموعد القادم.</p></div></div>
+            <div class="message-row"><div class="small-avatar">♥</div><div><h4>فريق عناية</h4><p>نرحب بك في عناية، نتمنى لك دوام الصحة والعافية.</p></div></div>
         </div>
         <div class="footer">
-            <h3>تذكير صحي</h3>
-            <h6>لا تنس موعدك عدأ مع د. .... في مجمع <span>الشفاء</span>الساعه 30.•10 صباحا.</h6>
+            
+            <div><h3>تذكير صحي</h3><h6>لا تنسَ موعدك غداً مع د. أحمد الكيلاني في مجمع عناية الطبي - الرياض الساعة 10:30 صباحاً.</h6></div>
+            <button>عرض التفاصيل ‹</button>
         </div>
 
     </div>

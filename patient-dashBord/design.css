@@ -2,20 +2,78 @@
     --color-font: #093f58;
     margin: 0px;
     box-sizing: border-box;
-    color: var(--color-font);
+   
     font-weight: bold;
 }
 
 .page {
     background-color: rgb(227, 234, 235);
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: 250px repeat(3, 1fr);
     grid-template-rows: auto auto auto repeat(1, 1fr) auto;
-    grid-template-areas: "aside header header name-patients" "aside disription disription disription" "aside main main main" "aside appointments doctors messages" "aside footer footer messages";
-    row-gap: 20px;
+    grid-template-areas: "aside header header name-patients" "aside disription disription disription" "aside main main main" "aside appointments doctors messages" "aside footer footer footer";
+    row-gap: 10px;
+    color: var(--color-font);
 }
+header {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #edf3f6;
+}
+
+header .notification {
+    position: absolute;
+   right: 20px;
+    top: 12px;
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.notification span {
+  position: absolute;
+    top: -1px;
+    right: 0px;
+    background: #ef5d70;
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+}
+
+.searching {
+    width: min(58%, 760px);
+    height: 48px;
+    border: 1px solid #e2edf2;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    color: #7c9aac;
+}
+
+.searching input {
+    flex: 1;
+    height: 100%;
+    outline: 0;
+    font-size: 14px;
+    text-align: right;
+}
+
+.searching svg {
+    order: -1;
+}
+
 
 header {
     width: 100%;
@@ -35,10 +93,22 @@ header {
     padding: 10px;
 }
 
+
+.name-patients .pesonal-img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .name-patients {
     width: 100%;
     grid-area: name-patients;
-    background-color: white;
+    background-color: white;   height: 65.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #edf3f6;
 }
 
 .name-patients .name {
@@ -61,33 +131,60 @@ header {
     display: inline;
 }
 
+.disription {
+        grid-area: disription;
+
+    height: 100%;
+    width: calc(100% - 20px);
+    margin-right: 10px;
+    border-radius: 13px;
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(100deg, #eaf9f8, #f3fbfc);
+    border: 1px solid #e2f0f1;
+}
+
+.disription .welcome-text {
+    text-align: right;
+}
+
+.disription h1 {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.disription h6 {
+    color: #55798d;
+    font-size: 15px;
+}
+
+
 aside {
     width: 100%;
     height: 100vh;
-    background-color: var(--color-font);
+    background-color: rgb(10, 62, 85);
     grid-area: aside;
 }
+.logo-aside{
+    width: 200px;
+    margin-top: 20px;
+    border: 0px solid transparent;
+    padding: 10px;
 
+}
 aside button {
     background-color: transparent;
     border: 1px solid transparent;
     color: white;
     display: block;
-    padding-right: 55px;
+    padding-right: 25px;
     margin-top: 13px;
-    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+   
 }
-
-.disription {
-    grid-area: disription;
-    width: 97%;
-    height: 15vh;
-    background-color: rgb(233, 247, 247);
-    padding: 10px;
-    margin-right: 10px;
-    border-radius: 10px;
-}
-
 .disription h4 {
     display: inline-block;
 }
@@ -112,18 +209,28 @@ main {
     flex-wrap: wrap;
 }
 
+
 main span {
     height: 9vh;
     display: inline-block;
 }
 
 main button {
+    width: 100px;height: 7vh;
     background-color: rgb(10, 114, 132);
     border: 1px solid transparent;
     border-radius: 10px;
     color: white;
     padding: 5px;
 }
+.appointment-date{border-right: 1px solid rgb(122, 153, 170);}
+.appointment-date p{
+   font-size: small;
+    width: 150px;
+    padding-top: 7px;
+    padding-right: 30px;
+}
+
 
 .appointments {
     grid-area: appointments;
@@ -137,31 +244,375 @@ main button {
     border-radius: 10px;
 }
 
-.doctors,
-.appointments,
-.messages {
-    width: 345px;
-}
+
 
 .doctors {
     grid-area: doctors;
 }
 
-.messages {
-    border-radius: 10px;
-    margin-right: 10px;
-    background-color: white;
-    grid-area: messages;
-    height: 30vh;
+
+
+.name-patients h3 {
+    margin-bottom: 4px;
 }
 
-.footer {
-    grid-area: footer;
-    width: 730px;
-    height: 10vh;
-    background-color: white;
+.name-patients p {
+    font-size: 12px;
+    color: #7a98aa;
+}
+
+.welcome-art {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    direction: ltr;
+}
+
+.welcome-art h4 {
+    color: #0d5a6b;
+    font-size: 19px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.stethoscope {
+    width: 88px;
+    height: 70px;
+    border: 6px solid #16b6b4;
+    border-top-color: transparent;
+    border-radius: 45px;
+    color: #16b6b4;
+    font-size: 42px;
+    line-height: 56px;
+    text-align: center;
+    transform: rotate(-8deg);
+}
+
+
+
+
+.appointment-doctor {
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 300px;
+    text-align: right;
+}
+
+.appointment-doctor h3 {
+    margin-bottom: 9px;
+    font-size: 18px;
+}
+
+.appointment-doctor h4 {
+    margin-bottom: 5px;
+}
+
+.appointment-doctor h6 {
+    color: #7794a5;
+    font-size: 13px;
+}
+
+.doctor-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: #edf4f7;
+    display: grid;
+    place-items: center;
+    font-size: 39px;
+}
+
+
+
+.confirmed {
+    order: 1;
+    background: #21bd9d;
+    color: #fff;
+    border-radius: 18px;
+    padding: 6px 15px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.appointments, .doctors, .messages {
+    width: calc(100% - 10px);
+    height: 100%;
     margin-right: 10px;
-    margin-bottom: 10px;
+    border: 1px solid #e2edf1;
+    box-shadow: 0 5px 15px rgba(15, 70, 90, .05);
+    padding: 18px 22px;
+    overflow: hidden;
+}.messages {
+      border-radius: 10px;
+    margin-left: 10px;
+    background-color: white;
+    grid-area: messages;  
+      width: 91%;
+
+
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.card-title h3 {
+    font-size: 15px;}
+
+
+
+.card-title p {
+    color: #12a6a4;
+    font-size: 12px;
+}
+
+.appointment-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f4;
+}
+
+.appointment-row:last-child {
+    border-bottom: 0;
+}
+
+.appointment-row > div:last-child {
+    flex: 1;
+    text-align: right;
+}
+
+.appointment-row h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.appointment-row p,
+.appointment-row small {
+    color: #7a99aa;
+    font-size: 11px;
+}
+
+.appointment-row em {
+    display: inline-block;
+    background: #cef5e8;
+    color: #16a687;
+    border-radius: 9px;
+    padding: 2px 7px;
+    font-size: 9px;
+    font-style: normal;
+    margin-right: 6px;
+}
+
+.appointment-row em.pending {
+    background: #dceffc;
+    color: #57a5ce;
+}
+
+.date-box {
+    width: 50px;
+    /* min-width: 63px; */
+    height: 47px;
+    border-radius: 12px;
+    background: #eff9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-box b, .date-box small {
+    font-size: 9px;
+    color: #6f95a3;
+}
+
+.date-box strong {
+    font-size: 20px;
+    
+}
+
+ .doctor-row {
+    display: grid;
+    grid-template-columns: 55px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    min-height: 72px;
+    border-bottom: 1px solid #edf2f4;}
+
+.doctor-row:last-child {
+    border-bottom: 0;
+}
+
+.doctor-row > div:nth-child(2) {
+    text-align: right;
+}
+
+.small-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #eef4f6;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+}
+
+.doctor-row h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.doctor-row p {
+    font-size: 9px;
+    color: #7b9aac;
+    margin-bottom: 4px;
+}
+
+.doctor-row b {
+    font-size: 10px;
+    color: #e7b52d;
+}
+
+.doctor-row button {
+    background: #e7f8f7;
+    color: #13a29f;
+    border: 0;
+    border-radius: 9px;
+    padding: 9px 12px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.message-row {
+      display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 72px;
+}
+
+.message-row:last-child {
+    border-bottom: 0;
+}
+
+.message-row > div:last-child {
+    flex: 1;
+    text-align: right;
+}
+
+.message-row h4 {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.message-row p {
+    font-size: 10px;
+    line-height: 1.7;
+    color: #7a99aa;
+}
+
+.footer {  
+       grid-area: footer;
+    width: 97%;
     border-radius: 10px;
-    padding: 10px;
+    height: 87%;
+    margin-right: 10px;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #eaf9f8;
+    border: 1px solid #d9efee;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.footer h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.footer h6 {
+    color: #6e8c9b;
+    font-size: 11px;
+}
+
+.footer button {
+    background: white;
+    color: #0c8492;
+    border: 1px solid #0cabb0;
+    border-radius: 9px;
+    padding: 10px 17px;
+    font-size: 11px;
+}
+
+
+
+
+
+
+
+@media (min-width: 851px) {
+    .page {
+        grid-template-columns: 220px repeat(3, minmax(0, 1fr));
+    }
+    .appointment-date {
+        min-width: 200px;
+    }
+
+    .appointment-doctor {
+        min-width: 240px;
+    }
+    .searching {
+        width: 62%;
+    }
+}
+
+@media (max-width: 850px) {
+    .page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "name-patients"
+            "disription"
+            "main"
+            "appointments"
+            "doctors"
+            "messages"
+            "footer"
+            "aside";
+        padding: 0 10px 15px;
+    }
+    aside {
+        height: auto;
+        min-height: 120px;
+    }
+    aside > img {
+        margin-bottom: 8px;
+    }
+    aside button {
+        display: inline-flex;
+        width: 19%;
+        min-height: 45px;
+        justify-content: center;
+        padding: 0 5px;
+    }
+    .searching {
+        width: 70%;
+    }
+    main {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .appointment-date {
+        min-width: 0;
+    }
 }
