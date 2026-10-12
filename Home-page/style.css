@@ -1,0 +1,959 @@
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px
+}
+
+body {
+    margin: 0;
+    background: #fbfeff;
+    color: #073957;
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.5
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button,
+input,
+select {
+    font: inherit
+}
+
+.header {
+    height: 82px;
+    padding: 0 clamp(18px, 4vw, 62px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    background: #ffffffed;
+    border-bottom: 1px solid #e4f1f3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    color: #078d8e;
+    font-size: 40px;
+    line-height: 1
+}
+
+.brand span:last-child {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1
+}
+
+.brand b {
+    font-size: 27px;
+    letter-spacing: -1px
+}
+
+.brand small {
+    font-size: 10px;
+    color: #078d8e;
+    margin-top: 5px
+}
+
+nav {
+    display: flex;
+    gap: clamp(14px, 2.2vw, 34px)
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 30px 0;
+    position: relative
+}
+
+nav a.active:after,
+nav a:hover:after {
+    content: "";
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 4px;
+    background: #078d8e
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.actions select {
+    height: 42px;
+    border: 1px solid #c7e3e7;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 9px;
+    color: #164b69
+}
+
+.btn {
+    height: 42px;
+    padding: 0 22px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 700
+}
+
+.outline {
+    border: 1px solid #078d8e;
+    color: #078d8e
+}
+
+.primary {
+    background: linear-gradient(135deg, #0a9a98, #08777d);
+    color: white
+}
+
+.menu {
+    display: none;
+    border: 1px solid #d5edf0;
+    border-radius: 9px;
+    background: white;
+    padding: 8px 11px
+}
+
+.hero {
+    min-height: 470px;
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 36px clamp(24px, 6vw, 92px) 30px;
+    background: linear-gradient(110deg, #e8fbfa, #f8ffff 48%, #ddf5f3)
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    right: -80px;
+    top: -330px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #bfece8, transparent 68%)
+}
+
+.copy {
+    position: relative;
+    z-index: 2;
+    max-width: 590px
+}
+
+.eyebrow {
+    display: inline-block;
+    border-radius: 30px;
+    padding: 8px 15px;
+    background: #d6f4f1;
+    color: #17677a;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 17px
+}
+
+h1 {
+    font-size: clamp(42px, 4.4vw, 68px);
+    line-height: .99;
+    letter-spacing: -2.8px;
+    margin: 0 0 15px;
+    font-weight: 800;
+    color: #073957
+}
+
+h1 em {
+    font-style: normal;
+    color: #078d8e
+}
+
+.copy>p {
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 480px;
+    margin: 0 0 20px;
+    color: #174c68
+}
+
+.search {
+    height: 60px;
+    max-width: 590px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 8px 7px 18px;
+    background: white;
+    border: 1px solid #d8eff0;
+    border-radius: 40px;
+    box-shadow: 0 12px 30px #0c87931b
+}
+
+.search span {
+    font-size: 30px;
+    color: #176486
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    min-width: 0;
+    flex: 1;
+    font-size: 13px;
+    color: #073957
+}
+
+.search button {
+    height: 44px;
+    width: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: #078d8e;
+    color: white;
+    font-size: 23px;
+    cursor: pointer
+}
+
+.trust {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 26px
+}
+
+.trust>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0
+}
+
+.trust>div+div {
+    border-left: 1px solid #b9e1e3;
+    padding-left: 18px
+}
+
+.trust i {
+    font-style: normal;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #d5f3f0;
+    color: #07888b;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    flex-shrink: 0
+}
+
+.trust b,
+.trust small {
+    display: block;
+    white-space: nowrap
+}
+
+.trust b {
+    font-size: 12px
+}
+
+.trust small {
+    font-size: 10px;
+    color: #5c8297;
+    margin-top: 3px
+}
+
+.visual {
+    height: 430px;
+    position: relative;
+    align-self: stretch;
+    margin: -8px -3vw -30px -10px;
+    overflow: hidden;
+    border-radius: 46% 0 0 0;
+    mask-image: linear-gradient(90deg, transparent, #000 15%, #000)
+}
+
+.visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* object-position: center 25%; */
+    display: block
+}
+
+.services {
+    padding: 25px clamp(18px, 4vw, 62px) 22px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px
+}
+
+.service {
+    min-height: 116px;
+    border: 1px solid #dceff2;
+    border-radius: 15px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s
+}
+
+.service:hover,
+.account:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px #0e67731a
+}
+
+.service i {
+    font-style: normal;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #d8f5f2;
+    color: #078b8e;
+    font-size: 26px;
+    flex-shrink: 0
+}
+
+.service span {
+    min-width: 0
+}
+
+.service b,
+.service small {
+    display: block
+}
+
+.service b {
+    font-size: 12px
+}
+
+.service small {
+    font-size: 10px;
+    color: #5e8297;
+    margin-top: 5px
+}
+
+.service>strong {
+    margin-left: auto;
+    align-self: flex-end;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #078d8e;
+    color: white;
+    font-size: 12px;
+    flex-shrink: 0
+}
+
+.mint {
+    background: linear-gradient(120deg, #f0fbf9, #f8ffff)
+}
+
+.blue {
+    background: linear-gradient(120deg, #f1f9ff, #f9fdff)
+}
+
+.blue i {
+    background: #dcefff;
+    color: #1683c4
+}
+
+.sky {
+    background: linear-gradient(120deg, #f0faff, #fbffff)
+}
+
+.sky i {
+    background: #dceeff;
+    color: #1678bd
+}
+
+.lilac {
+    background: linear-gradient(120deg, #f8f6ff, #fff)
+}
+
+.lilac i {
+    background: #eee4ff;
+    color: #7151d9
+}
+
+.lilac>strong {
+    background: #3975b4
+}
+
+.accounts {
+    padding: 3px clamp(18px, 4vw, 62px) 25px
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 18px
+}
+
+.heading h2 {
+    font-size: 27px;
+    letter-spacing: -.7px;
+    margin: 0 0 3px;
+    color: #0a4267
+}
+
+.heading p {
+    font-size: 13px;
+    color: #6084a0;
+    margin: 0
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px
+}
+
+.account {
+    min-height: 115px;
+    border: 1px solid #bdeee9;
+    border-radius: 15px;
+    padding: 17px 23px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(115deg, #fff, #f9ffff);
+    transition: transform .2s, box-shadow .2s
+}
+
+.account i {
+    font-style: normal;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #d3f5f0;
+    color: #087f87;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    flex-shrink: 0
+}
+
+.account span {
+    min-width: 0
+}
+
+.account b,
+.account small {
+    display: block
+}
+
+.account b {
+    font-size: 15px;
+    margin-bottom: 5px
+}
+
+.account small {
+    font-size: 10px;
+    line-height: 1.55;
+    color: #5c8198
+}
+
+.account>strong {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #078d8e;
+    color: white;
+    margin-left: auto;
+    flex-shrink: 0
+}
+
+.doctor {
+    border-color: #c9e2ff
+}
+
+.doctor i {
+    background: #dceeff;
+    color: #1675cf
+}
+
+.doctor>strong {
+    background: #1879c9
+}
+
+.admin {
+    border-color: #e1d6ff
+}
+
+.admin i {
+    background: #e9ddff;
+    color: #6946d7
+}
+
+.admin>strong {
+    background: #6549d9
+}
+
+footer {
+    min-height: 76px;
+    padding: 13px clamp(18px, 4vw, 62px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    background: linear-gradient(90deg, #f1fbfb, #f9fcff);
+    border-top: 1px solid #e7f2f4
+}
+
+footer .logo {
+    width: 36px;
+    height: 36px;
+    font-size: 31px
+}
+
+footer .brand b {
+    font-size: 21px
+}
+
+footer .brand small {
+    font-size: 9px
+}
+
+.links {
+    display: flex;
+    gap: 11px;
+    font-size: 10px;
+    color: #537b98
+}
+
+.social {
+    display: flex;
+    gap: 7px
+}
+
+.social a {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #dceaf1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #457da0;
+    background: white;
+    font-size: 11px;
+    font-weight: 700
+}
+
+footer>small {
+    font-size: 9px;
+    color: #6b8ca2;
+    white-space: nowrap
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 15px);
+    opacity: 0;
+    pointer-events: none;
+    background: #083e59;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 11px;
+    z-index: 30;
+    transition: .2s;
+    max-width: calc(100% - 32px);
+    font-size: 13px
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0)
+}
+
+@media(max-width:1180px) {
+    .header {
+        gap: 14px;
+        padding-inline: 22px
+    }
+    nav {
+        gap: 15px
+    }
+    nav a {
+        font-size: 12px
+    }
+    .btn {
+        padding: 0 15px
+    }
+    .hero {
+        padding-inline: 38px
+    }
+    .trust {
+        gap: 10px
+    }
+    .trust>div+div {
+        padding-left: 10px
+    }
+    .trust i {
+        width: 39px;
+        height: 39px
+    }
+    .services {
+        gap: 10px
+    }
+    .service {
+        padding: 12px;
+        gap: 9px
+    }
+    .service i {
+        width: 46px;
+        height: 46px
+    }
+    .account {
+        padding: 14px;
+        gap: 11px
+    }
+    .account i {
+        width: 54px;
+        height: 54px
+    }
+}
+
+@media(max-width:900px) {
+    .header {
+        height: 72px
+    }
+    .menu {
+        display: block;
+        margin-left: auto
+    }
+    .header nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 15px;
+        right: 15px;
+        padding: 10px;
+        background: white;
+        border: 1px solid #d5edf0;
+        border-radius: 14px;
+        box-shadow: 0 16px 40px #0e67731a;
+        flex-direction: column;
+        gap: 0
+    }
+    .header nav.open {
+        display: flex
+    }
+    .header nav a {
+        padding: 12px;
+        border-radius: 8px
+    }
+    .header nav a.active,
+    .header nav a:hover {
+        background: #eaf9f7
+    }
+    .header nav a:after {
+        display: none
+    }
+    .actions select {
+        display: none
+    }
+    .hero {
+        grid-template-columns: 1fr .8fr;
+        padding: 30px 25px;
+        min-height: 420px
+    }
+    .visual {
+        height: 390px;
+        margin-right: -25px
+    }
+    .trust {
+        flex-wrap: wrap
+    }
+    .services {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+    .account-grid {
+        gap: 11px
+    }
+    .account {
+        align-items: flex-start;
+        flex-wrap: wrap
+    }
+    .account span {
+        flex: 1 1 120px
+    }
+    .account>strong {
+        position: absolute;
+        right: 12px;
+        bottom: 12px
+    }
+    footer {
+        flex-wrap: wrap
+    }
+    .links {
+        order: 3;
+        width: 100%;
+        justify-content: center
+    }
+}
+
+@media(max-width:620px) {
+    .header {
+        padding: 0 13px;
+        gap: 8px
+    }
+    .brand {
+        gap: 5px
+    }
+    .brand .logo {
+        width: 37px;
+        height: 37px;
+        font-size: 32px
+    }
+    .brand b {
+        font-size: 21px
+    }
+    .brand small {
+        font-size: 8px
+    }
+    .actions {
+        gap: 5px
+    }
+    .actions .btn {
+        height: 36px;
+        padding: 0 11px;
+        font-size: 11px
+    }
+    .actions .outline {
+        display: none
+    }
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 27px 18px 0
+    }
+    .eyebrow {
+        font-size: 11px;
+        padding: 7px 12px
+    }
+    h1 {
+        font-size: clamp(43px, 12vw, 60px);
+        letter-spacing: -2px
+    }
+    .copy>p {
+        font-size: 14px
+    }
+    .search {
+        height: 54px
+    }
+    .search input {
+        font-size: 11px
+    }
+    .search button {
+        width: 39px;
+        height: 39px
+    }
+    .trust {
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 19px
+    }
+    .trust>div {
+        gap: 6px
+    }
+    .trust>div+div {
+        padding-left: 0;
+        border: 0
+    }
+    .trust i {
+        width: 32px;
+        height: 32px;
+        font-size: 17px
+    }
+    .trust b {
+        font-size: 9px;
+        white-space: normal
+    }
+    .trust small {
+        font-size: 8px;
+        white-space: normal
+    }
+    .visual {
+        width: 100%;
+        height: 260px;
+        margin: 18px -18px 0 0;
+        border-radius: 45% 0 0 0;
+        mask-image: linear-gradient(90deg, transparent, #000 10%, #000)
+    }
+    .note {
+        top: 15%;
+        right: 5%
+    }
+    .note b {
+        font-size: 17px
+    }
+    .note span {
+        font-size: 11px
+    }
+    .health {
+        right: 5%;
+        bottom: 8%;
+        padding: 8px 11px
+    }
+    .services {
+        padding: 16px 13px;
+        gap: 9px
+    }
+    .service {
+        min-height: 102px;
+        padding: 10px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 8px
+    }
+    .service i {
+        width: 38px;
+        height: 38px;
+        font-size: 20px
+    }
+    .service span {
+        flex: 1 1 100px
+    }
+    .service b {
+        font-size: 10px
+    }
+    .service small {
+        font-size: 9px
+    }
+    .service>strong {
+        position: absolute;
+        right: 9px;
+        bottom: 9px
+    }
+    .accounts {
+        padding: 0 13px 19px
+    }
+    .heading h2 {
+        font-size: 23px
+    }
+    .heading p {
+        font-size: 11px
+    }
+    .account-grid {
+        grid-template-columns: 1fr;
+        gap: 9px
+    }
+    .account {
+        min-height: 88px;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 12px
+    }
+    .account i {
+        width: 49px;
+        height: 49px;
+        font-size: 25px
+    }
+    .account span {
+        flex: 1
+    }
+    .account b {
+        font-size: 13px
+    }
+    .account small {
+        font-size: 10px;
+        padding-right: 10px
+    }
+    .account>strong {
+        position: static;
+        margin-left: auto
+    }
+    footer {
+        padding: 15px 13px;
+        gap: 12px
+    }
+    .links {
+        flex-wrap: wrap;
+        gap: 7px
+    }
+    .social {
+        gap: 4px
+    }
+    .social a {
+        width: 23px;
+        height: 23px
+    }
+    footer>small {
+        width: 100%;
+        text-align: center
+    }
+    .footer-brand .logo {
+        width: 30px;
+        height: 30px;
+        font-size: 26px
+    }
+}
+
+@media(max-width:370px) {
+    .actions .primary {
+        padding: 0 8px
+    }
+    .trust {
+        align-items: flex-start
+    }
+    .trust>div {
+        flex-direction: column;
+        align-items: flex-start
+    }
+    .service {
+        padding: 8px
+    }
+    .service i {
+        width: 33px;
+        height: 33px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        scroll-behavior: auto!important;
+        transition: none!important
+    }
+}

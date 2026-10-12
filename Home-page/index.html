@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#078d8e">
+    <title>Inaya | Your Health, Our Priority</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a class="brand" href="#home"></a>
+        <button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <nav id="nav"><a class="active" href="#home">Home</a><a href="#doctors">Doctors</a><a href="#clinics">Clinics</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+        <div class="actions"><select aria-label="Language"><option>English</option><option>العربية</option></select><a class="btn outline" href="#account">Login</a><a class="btn primary" href="#account">Sign Up</a></div>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="copy"><span class="eyebrow">✦ &nbsp; Trusted Healthcare Platform</span>
+                <h1>Your Health<br><em>Our Priority</em></h1>
+                <p>Book appointments, consult with top doctors, and get personalized care — all in one place.</p>
+                <form class="search" id="search"><span>⌕</span><input id="query" type="search" placeholder="Search for doctors, specialties, or clinics…" aria-label="Search for doctors, specialties, or clinics"><button aria-label="Search">→</button></form>
+                <div class="trust">
+                    <div><i>♙</i><span><b>Top Specialists</b><small>Verified &amp; Trusted</small></span></div>
+                    <div><i>▦</i><span><b>Easy Booking</b><small>In Just a Few Clicks</small></span></div>
+                    <div><i>⛨</i><span><b>Secure &amp; Private</b><small>Your Data is Safe</small></span></div>
+                </div>
+            </div>
+            <div class="visual"><img src="طبيبة مبتسمة في عيادة حديثة.png" alt="Doctor in a white coat">
+                <div class="note"></div>
+
+        </section>
+        <section class="services" id="services">
+            <a class="service mint" href="#about"><i>✳</i><span><b>AI Medical Assistant</b><small>Get instant answers, 24/7.</small></span><strong>↗</strong></a>
+            <a class="service blue" href="#about"><i>♧</i><span><b>Symptom Checker</b><small>Know what’s next.</small></span><strong>↗</strong></a>
+            <a class="service sky" href="#about"><i>▤</i><span><b>Medical Summarizer</b><small>Shorten complex reports.</small></span><strong>↗</strong></a>
+            <a class="service lilac" href="#doctors"><i>▦</i><span><b>Easy Appointments</b><small>Book in a few clicks.</small></span><strong>↗</strong></a>
+        </section>
+        <section class="accounts" id="account">
+            <div class="heading">
+                <h2>Choose Your Account</h2>
+                <p>Join Inaya and get the best healthcare experience.</p>
+            </div>
+            <div class="account-grid">
+                <a class="account patient" href="#patient"><i>♙</i><span><b>Patient</b><small>Book appointments, manage your health, get AI assistance and more.</small></span><strong>→</strong></a>
+                <a class="account doctor" href="#doctor"><i>⚕</i><span><b>Doctor</b><small>Manage your schedule, patients and appointments.</small></span><strong>→</strong></a>
+                <a class="account admin" href="#admin"><i>⚙</i><span><b>Admin</b><small>Manage doctors, clinics and system settings.</small></span><strong>→</strong></a>
+            </div>
+        </section>
+    </main>
+    <footer id="contact"><a class="brand" href="#home"><span class="logo">♥</span><span><b>Inaya</b><small>Your Health, Our Priority</small></span></a>
+        <div class="links"><a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a> • <a href="#help">Help Center</a></div>
+        <div class="social"><a href="#facebook">f</a><a href="#x">𝕏</a><a href="#linkedin">in</a><a href="#instagram">◎</a></div><small>© <span id="year"></span> Inaya. All rights reserved.</small></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
