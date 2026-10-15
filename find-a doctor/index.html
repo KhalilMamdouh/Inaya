@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4fbfa">
+    <title>Inaya — Find Your Doctor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <nav class="main-nav" aria-label="Main navigation">
+
+            <a href="../Home-page/index.html">Home</a>
+            <a class="active" href="#doctors">Doctors</a>
+            <a href="#Patient">Patient</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-btn" aria-label="Notifications">♧<i></i></button>
+            <button class="avatar-mini" aria-label="Profile">K</button>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+    <main>
+        <section class="search-panel" aria-label="Search doctors">
+            <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Search by doctor name, specialty, or keyword..." aria-label="Search by doctor name or specialty"></label>
+            <label class="select-field"><span>Specialty</span><select id="specialty"><option value="all">All specialties</option><option>Cardiology</option><option>Dermatology</option><option>Neurology</option><option>Pediatrics</option><option>Orthopedics</option><option>Ophthalmology</option></select></label>
+            <label class="select-field"><span>Location</span><select id="location"><option value="all">All locations</option><option>Gaza</option><option>Ramallah</option><option>Nablus</option></select></label>
+            <label class="select-field availability-select"><span>Availability</span><select id="availability"><option value="all">Any time</option><option value="today">Available today</option></select></label>
+            <button class="search-btn" id="searchBtn"><span>⌕</span> Search</button>
+        </section>
+        <div class="content-grid">
+            <aside class="filters">
+                <div class="filter-heading">
+                    <h2>Filters</h2><button id="resetBtn">Reset all</button></div>
+                <div class="filter-group">
+                    <h3>Specialty</h3>
+                    <label><input type="checkbox" class="specialty-check" value="Cardiology"> <span>Cardiology</span><small>12</small></label>
+                    <label><input type="checkbox" class="specialty-check" value="Dermatology"> <span>Dermatology</span><small>8</small></label>
+                    <label><input type="checkbox" class="specialty-check" value="Neurology"> <span>Neurology</span><small>6</small></label>
+                    <label><input type="checkbox" class="specialty-check" value="Pediatrics"> <span>Pediatrics</span><small>9</small></label>
+                    <label><input type="checkbox" class="specialty-check" value="Orthopedics"> <span>Orthopedics</span><small>7</small></label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Availability</h3>
+                    <label><input type="checkbox" id="todayCheck"> <span>Available today</span><small class="green-dot"></small></label>
+                    <label><input type="checkbox" id="onlineCheck"> <span>Online consultation</span></label>
+                </div>
+
+            </aside>
+            <section class="results">
+
+                <div class="doctor-list" id="doctorList">
+                    <article class="doctor-card" data-name="ahmed al-haddad" data-specialty="Cardiology" data-location="Gaza" data-rating="4.9" data-price="50" data-today="yes" data-online="yes">
+                        <div class="doctor-avatar avatar-blue"><span>AH</span><i>✓</i></div>
+                        <div class="doctor-info">
+                            <div class="name-row">
+                                <h3>Dr. Ahmed Al-Haddad</h3><span class="verified">✓ Verified</span></div>
+                            <p class="specialty">Cardiologist</p>
+                            <div class="rating"><span>★★★★★</span> <b>4.9</b> <small>(124 reviews)</small></div>
+                            <div class="details"><span>⌖ Gaza, Palestine</span><span>◷ 12 years experience</span></div>
+                            <div class="tags"><span>Heart health</span><span>Preventive care</span></div>
+                        </div>
+                        <div class="doctor-side">
+                            <div class="fee"></div><span class="available"><i></i> Available today</span><button class="book-btn">Book appointment <span>→</span></button><button class="profile-btn">View profile</button></div>
+                    </article>
+                    <article class="doctor-card" data-name="sara mohammed" data-specialty="Dermatology" data-location="Ramallah" data-rating="4.8" data-price="45" data-today="yes" data-online="yes">
+                        <div class="doctor-avatar avatar-rose"><span>SM</span><i>✓</i></div>
+                        <div class="doctor-info">
+                            <div class="name-row">
+                                <h3>Dr. Sara Mohammed</h3><span class="verified">✓ Verified</span></div>
+                            <p class="specialty">Dermatologist</p>
+                            <div class="rating"><span>★★★★★</span> <b>4.8</b> <small>(98 reviews)</small></div>
+                            <div class="details"><span>⌖ Ramallah, Palestine</span><span>◷ 9 years experience</span></div>
+                            <div class="tags"><span>Skin care</span><span>Acne treatment</span></div>
+                        </div>
+                        <div class="doctor-side">
+                            <div class="fee"></div><span class="available"><i></i> Available today</span><button class="book-btn">Book appointment <span>→</span></button><button class="profile-btn">View profile</button></div>
+                    </article>
+                    <article class="doctor-card" data-name="omar khalil" data-specialty="Neurology" data-location="Nablus" data-rating="4.7" data-price="60" data-today="no" data-online="no">
+                        <div class="doctor-avatar avatar-violet"><span>OK</span><i>✓</i></div>
+                        <div class="doctor-info">
+                            <div class="name-row">
+                                <h3>Dr. Omar Khalil</h3><span class="verified">✓ Verified</span></div>
+                            <p class="specialty">Neurologist</p>
+                            <div class="rating"><span>★★★★★</span> <b>4.7</b> <small>(76 reviews)</small></div>
+                            <div class="details"><span>⌖ Nablus, Palestine</span><span>◷ 15 years experience</span></div>
+                            <div class="tags"><span>Headache care</span><span>Neurological health</span></div>
+                        </div>
+                        <div class="doctor-side">
+                            <div class="fee"></div><span class="available later"><i></i> Next available tomorrow</span><button class="book-btn">Book appointment <span>→</span></button><button class="profile-btn">View profile</button></div>
+                    </article>
+                    <article class="doctor-card" data-name="lina hassan" data-specialty="Pediatrics" data-location="Gaza" data-rating="4.9" data-price="40" data-today="yes" data-online="yes">
+                        <div class="doctor-avatar avatar-peach"><span>LH</span><i>✓</i></div>
+                        <div class="doctor-info">
+                            <div class="name-row">
+                                <h3>Dr. Lina Hassan</h3><span class="verified">✓ Verified</span></div>
+                            <p class="specialty">Pediatrician</p>
+                            <div class="rating"><span>★★★★★</span> <b>4.9</b> <small>(112 reviews)</small></div>
+                            <div class="details"><span>⌖ Gaza, Palestine</span><span>◷ 10 years experience</span></div>
+                            <div class="tags"><span>Child wellness</span><span>Family care</span></div>
+                        </div>
+                        <div class="doctor-side">
+                            <div class="fee"></div><span class="available"><i></i> Available today</span><button class="book-btn">Book appointment <span>→</span></button><button class="profile-btn">View profile</button></div>
+                    </article>
+                    <article class="doctor-card" data-name="yousef nasser" data-specialty="Orthopedics" data-location="Ramallah" data-rating="4.6" data-price="55" data-today="no" data-online="yes">
+                        <div class="doctor-avatar avatar-green"><span>YN</span><i>✓</i></div>
+                        <div class="doctor-info">
+                            <div class="name-row">
+                                <h3>Dr. Yousef Nasser</h3><span class="verified">✓ Verified</span></div>
+                            <p class="specialty">Orthopedic Surgeon</p>
+                            <div class="rating"><span>★★★★★</span> <b>4.6</b> <small>(81 reviews)</small></div>
+                            <div class="details"><span>⌖ Ramallah, Palestine</span><span>◷ 11 years experience</span></div>
+                            <div class="tags"><span>Joint health</span><span>Sports injuries</span></div>
+                        </div>
+                        <div class="doctor-side">
+                            <div class="fee"></div>
+                            <span class="available later">
+                                <i></i> Next available tomorrow</span>
+                            <button class="book-btn">Book appointment <span>→</span>
+                            </button><button class="profile-btn">View profile</button>
+                        </div>
+                    </article>
+                    <article class="doctor-card" data-name="mariam saleh" data-specialty="Ophthalmology" data-location="Nablus" data-rating="4.8" data-price="48" data-today="yes" data-online="no">
+                        <div class="doctor-avatar avatar-aqua"><span>MS</span><i>✓</i></div>
+                        <div class="doctor-info">
+                            <div class="name-row">
+                                <h3>Dr. Mariam Saleh</h3><span class="verified">✓ Verified</span></div>
+                            <p class="specialty">Ophthalmologist</p>
+                            <div class="rating">
+                                <span>★★★★★</span>
+                                <b>4.8</b>
+                                <small>(65 reviews)</small></div>
+                            <div class="details">
+                                <span>⌖ Nablus, Palestine</span>
+                                <span>◷ 8 years experience</span></div>
+                            <div class="tags"><span>Eye health</span><span>Vision care</span></div>
+                        </div>
+                        <div class="doctor-side">
+                            <div class="fee"></div>
+                            <span class="available"><i></i> Available today</span>
+                            <button class="book-btn">Book appointment <span>→</span>
+                            </button>
+                            <button class="profile-btn">View profile</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="empty-state" id="emptyState" hidden><span>⌕</span>
+                    <h3>No doctors found</h3>
+                    <p>Try adjusting your search or filters.</p><button id="emptyReset">Clear filters</button></div>
+                <div class="list-footer">
+                    <span>Showing <b id="showingCount">6</b>
+                         specialists</span>
+                    <button id="loadMore">View more doctors <span>↓</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <span>♥ Inaya</span>
+        <small>Care that connects. Your health, our priority.</small>
+        <small>© 2026 Inaya Healthcare</small>
+    </footer>
+    <d>
+        >
+
+</html>
+
+</html>
+
+</html>
+
+</html>
