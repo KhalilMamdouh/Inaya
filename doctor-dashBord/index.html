@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Inaya | Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="profile"><span class="avatar">AH</span>
+                <span><b>Dr. Ahmed Al-Haddad</b><small>Cardiologist</small>
+                </span>
+            </div>
+            <p class="label">WORKSPACE</p>
+            <nav>
+                <a class="active" href="#dashboard">▦ <span>Dashboard</span>
+                </a>
+                <a href="#appointments">▣ <span>Appointments</span>
+                    <em>8</em></a><a href="#patients">♙ <span>Patients</span></a><a href="#messages">✉ <span>Messages</span><em>3</em></a>
+
+            </nav>
+            <p class="label preferences">PREFERENCES</p>
+            <nav>
+                <a href="#profile">◎ <span>My Profile</span></a>
+                <a href="#settings">⚙ <span>Settings</span>
+                </a><a href="#help">? <span>Help & Support</span>
+                </a>
+            </nav>
+            <a class="logout" href="#logout">↪ <span>Log out</span></a></aside>
+        <main id="dashboard">
+            <header>
+                <div class="crumb">Workspace <span>/</span> <b>Doctor Dashboard</b></div>
+                <div class="actions"><button aria-label="Search">⌕</button><button aria-label="Notifications">♧<i></i></button><span class="language">◎ English⌄</span><span class="avatar">AH</span></div>
+
+            </header>
+            <section class="welcome">
+                <div>
+                    <p class="eyebrow">WEDNESDAY, OCTOBER 15, 2026</p>
+                    <h1>Good morning, Dr. Ahmed <span>✦</span></h1>
+                    <p class="muted">Manage your appointments, patients, and availability.</p>
+                </div>
+                <div class="welcome-buttons"><button class="primary" onclick="document.querySelector('#appointments').scrollIntoView({behavior:'smooth'})">＋ Manage schedule</button></div>
+            </section>
+
+            <section class="grid">
+                <article class="panel" id="appointments">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Upcoming appointments</h2>
+                            <p>Keep track of your consultations</p>
+                        </div><a href="#all">View all appointments ↗</a></div>
+                    <div class="schedule-tools"><span>▣ &nbsp;Wednesday, Oct 15</span>
+                        <div><button>‹</button><button>›</button><button>Today</button></div>
+                    </div>
+                    <div class="appointment"><time>09:00<small>AM</small></time><span class="timeline"></span><span class="avatar">OK</span>
+                        <div class="person"><b>Omar Khalil</b><small>Follow-up consultation</small></div><span class="status confirmed">Confirmed</span><button class="more">•••</button></div>
+                    <div class="appointment"><time>10:30<small>AM</small></time><span class="timeline"></span><span class="avatar">LH</span>
+                        <div class="person"><b>Lina Hassan</b><small>Cardiology check-up</small></div><span class="status confirmed">Confirmed</span><button class="more">•••</button></div>
+                    <div class="appointment"><time>12:00<small>PM</small></time><span class="timeline"></span><span class="avatar">YN</span>
+                        <div class="person"><b>Yousef Nasser</b><small>Initial consultation</small></div><span class="status pending">Pending</span><button class="more">•••</button></div>
+                    <div class="appointment"><time>02:30<small>PM</small></time><span class="timeline"></span><span class="avatar">SA</span>
+                        <div class="person"><b>Sara Ali</b><small>Results review</small></div><span class="status confirmed">Confirmed</span><button class="more">•••</button></div>
+                </article>
+                <article class="panel availability">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Availability</h2>
+                            <p>Your consultation hours</p>
+                        </div><button class="edit" onclick="alert('Demo: availability editor')">Edit hours ↗</button></div>
+                    <div class="available"><span class="live"></span>
+                        <div><b>You’re available today</b><small>Patients can book an appointment</small></div><span class="toggle"><i></i></span></div>
+                    <div class="hours">
+                        <div><span>Morning session</span><b>09:00 AM – 12:30 PM</b></div>
+                        <div><span>Afternoon session</span><b>02:00 PM – 05:00 PM</b></div>
+                        <div><span>Consultation duration</span><b>30 minutes</b></div>
+                    </div>
+                    <div class="note">ⓘ &nbsp;Your next available slot is at <b>03:00 PM</b>.</div>
+                </article>
+            </section>
+            <section class="grid lower">
+                <article class="panel" id="patients">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Recent patients</h2>
+                            <p>Quick access to patient information</p>
+                        </div><a href="#patients">View all ↗</a></div>
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Patient</th>
+                                    <th>Last visit</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="table-person"><span class="avatar">OK</span><span><b>Omar Khalil</b><small>IN-2048</small></span></div>
+                                    </td>
+                                    <td>Oct 12, 2026</td>
+                                    <td>Follow-up</td>
+                                    <td><span class="status confirmed">Completed</span></td>
+                                    <td>↗</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-person"><span class="avatar">LH</span><span><b>Lina Hassan</b><small>IN-2051</small></span></div>
+                                    </td>
+                                    <td>Oct 10, 2026</td>
+                                    <td>Check-up</td>
+                                    <td><span class="status confirmed">Completed</span></td>
+                                    <td>↗</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-person"><span class="avatar">YN</span><span><b>Yousef Nasser</b><small>IN-2059</small></span></div>
+                                    </td>
+                                    <td>Oct 08, 2026</td>
+                                    <td>Consultation</td>
+                                    <td><span class="status pending">Scheduled</span></td>
+                                    <td>↗</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+                <article class="panel" id="messages">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Recent messages</h2>
+                            <p>Stay connected with your patients</p>
+                        </div><a href="#messages">Open inbox ↗</a></div>
+                    <div class="message"><span class="avatar">LH</span>
+                        <div><b>Lina Hassan</b>
+                            <p>Doctor, should I continue taking...</p>
+                        </div><time>10:42 AM</time><i></i></div>
+                    <div class="message"><span class="avatar">OK</span>
+                        <div><b>Omar Khalil</b>
+                            <p>I have uploaded my recent test results.</p>
+                        </div><time>09:18 AM</time></div>
+                    <div class="message"><span class="avatar">SA</span>
+                        <div><b>Sara Ali</b>
+                            <p>Thank you for your advice!</p>
+                        </div><time>Yesterday</time></div>
+                </article>
+            </section>
+            <footer><span>© 2026 Inaya Healthcare Platform</span><span>Privacy · Help Center · Terms of Service</span></footer>
+        </main>
+    </div>
+</body>
+
+</html>
